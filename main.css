@@ -48,8 +48,8 @@ body {
   h2 {
     font-size: 2rem;
     color: #ffcc00; /* Gold color for subheading */
-    margin: 20px 0;
-    text-transform: uppercase;
+    margin: 15px 0;
+    /* text-transform: uppercase; */
   }
   
   p {
