@@ -1,0 +1,158 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a2a3a; /* Dark navy blue background */
+    color: #f0f0f0; /* Light text for contrast */
+    text-align: center;
+    overflow: hidden; /* Ensure no scrollbars */
+    flex-direction: column; /* Ensures vertical stacking of content */
+  }
+  
+  /* Wrapper for centered content */
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px; /* Space between content and ribbon */
+    position: relative;
+    top: -20px; /* Shift the content upwards */
+    width: 100%; /* Ensure it takes full width of the body */
+    max-width: 1200px; /* Optional: limit the max width for larger screens */
+  }
+  
+  /* Logo styling */
+  .logo {
+    width: 200px; /* Adjust logo size */
+    margin-bottom: 20px;
+  }
+  
+  h1, h2 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: #ff4c4c; /* Red color for the header */
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #ffcc00; /* Gold color for subheading */
+    margin: 20px 0;
+    text-transform: uppercase;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #ccc; /* Lighter gray for the "BY" text */
+    letter-spacing: 1px;
+  }
+  
+  h1, h2, p {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Red Ribbon and other styling */
+  #ribbon {
+    z-index: 999;
+    display: block;
+    position: absolute;
+    top: 80%;
+    left: 0;
+    width: 100vw;
+    transform: translateY(-50%);
+    background: #a7002c; /* Red color for the ribbon */
+    float: left;
+    cursor: pointer;
+  }
+  
+  #ribbon .bow {
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    width: 20rem;
+    height: 10rem;
+    background-image: url(https://pics.clipartpng.com/midle/Beautiful_Red_Bow_PNG_Clipart-518.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+  }
+  
+  #ribbon .bow.hide {
+    z-index: 0;
+    transition: transform 2s ease-in-out, opacity .1s ease 2s;
+    transform: translateY(-2000rem) rotate(360deg);
+    opacity: 0;
+    transform-origin: top left;
+  }
+  
+  #ribbon .ribbon--r,
+  #ribbon .ribbon--l {
+    z-index: 0;
+    position: absolute;
+    background-color: #a7002c; /* Same red for ribbon parts */
+    width: 50vw;
+    height: 1.5rem;
+  }
+  
+  #ribbon .ribbon--r {
+    right: 0;
+  }
+  
+  #ribbon .ribbon--r.hide {
+    transition: transform 5s ease-in-out;
+    transform: translateX(1000rem) rotate(90deg);
+    transform-origin: bottom right;
+  }
+  
+  #ribbon .ribbon--l {
+    left: 0;
+  }
+  
+  #ribbon .ribbon--l.hide {
+    transition: transform 5s ease-in-out;
+    transform: translateX(-1000rem) rotate(-90deg);
+    transform-origin: bottom left;
+  }
+  
+  #imgFollow {
+    z-index: 999;
+    width: 5rem;
+    position: absolute;
+    display: none; /* Initially hidden */
+    transform: rotate(90deg);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    filter: grayscale(10%) brightness(50%); /* Adjust brightness to darken the icon */
+}
+  
+  #imgFollow:hover {
+    transform: rotate(45deg);
+  }
+  

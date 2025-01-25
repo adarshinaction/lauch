@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+  <div class="content-wrapper">
+    <a href="" target="">
+      <img src='./Zosh_Logo_Light.png' class="logo" alt="Zosh logo" />
+    </a>
+    <h1 class="center">ZOSH AEROSPACE</h1>
+    <h2 class="center">WEBSITE LAUNCH</h2>
+    <p class="center">BY</p>
+    <h2 class="center">Shri Y Gopala Rao</h2>
+  </div>
+
+  <div id="ribbon">
+    <div class="ribbon bow"></div>
+    <div class="ribbon ribbon--l"></div>
+    <div class="ribbon ribbon--r"></div>
+  </div>
+
+  <img id="imgFollow" class="imgFollow" src="./red-scissors-icon.svg" style="position: relative;" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      if (localStorage.getItem('ribbonCut') != 'cut') {
+        $('.ribbon').delay(2000).fadeIn();
+        $('#imgFollow').delay(2000).fadeIn(); // Make scissors visible after the ribbon animation
+      }
+  
+      $(".ribbon").click(function() {
+        $(".ribbon--l").addClass("hide");
+        $(".ribbon--r").addClass("hide");
+        $(".bow").addClass("hide");
+        $("#imgFollow").hide(); // Hide the scissors after clicking the ribbon
+        localStorage.setItem('ribbonCut', 'cut');
+        
+        // Trigger confetti effect
+        confetti({
+            particleCount: 500,
+            spread: 200,
+            origin: { y: 0.5 },
+            angle: 90,
+            startVelocity: 30,
+            gravity: 0.5,
+            ticks: 300,
+            duration: 5000
+        });
+  
+        // Wait 5 seconds then redirect
+        setTimeout(function() {
+          window.location.href = "https://www.zoshaerospace.in";
+        }, 5000);
+      });
+  
+      $(document).mousemove(function (e) {
+        $('#imgFollow').offset({
+          left: e.pageX + 30,
+          top: e.pageY - 20
+        });
+        $('#imgFollow').css('z-index', '1000');
+        $('#imgFollow').show(); // Ensure the scissors are shown when moving the mouse
+      });
+    });
+  </script>
+  
+</body>
+</html>
