@@ -76,7 +76,7 @@ h2 {
 p {
   font-size: 1.3rem;
   font-weight: 500;
-  margin: 10px 0;
+  margin: 0px 0;
   color: #6E8E59; /* Darker gray for the "BY" text */
   letter-spacing: 1px;
 }
@@ -179,17 +179,17 @@ h1, h2, p {
   transform: rotate(45deg);
 }
 
-
+/* 
 .content-wrapper-hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin-bottom: 80px; */
+  margin-bottom: 80px;
   position: relative;
-  /* top: 7rem; */
+  top: 7rem;
   width: 100%;
-}
+} */
 
 /* Logo container */
 
@@ -204,10 +204,11 @@ h1, h2, p {
   /* gap: clamp(1rem, 2vw, 2rem); */
   width: 100%;
   height: 100vh; /* Ensures it fits within the viewport */
-  padding: clamp(1rem, 2vw, 1rem);
+  /* padding: clamp(1rem, 2vw, 1rem); */
   box-sizing: border-box;
   overflow: auto; /* Allows scrolling if needed */
-  top: 50px;
+  /* top: 9rem; */
+  padding-top: 5rem;
 }
 
 /* Points List */
@@ -229,13 +230,13 @@ h1, h2, p {
 .points-list li {
   font-size: clamp(1.5rem, 3vw, 2rem); /* Increased min & max size */
   font-weight: bold;
-  color: #ef0000;
+  color: #110257;
 }
 
 .points-list li {
   font-size: clamp(1.7rem, 3vw, 2.1rem); /* Bigger text */
   font-weight: bold;
-  color: #ef0000;
+  color: #110257;
   display: flex;
   align-items: center;
   gap: 0.7rem; /* Space between point and text */
@@ -243,7 +244,7 @@ h1, h2, p {
 
 .points-list li::before {
   content: "•"; /* You can change this to another symbol */
-  color: #ef0000; /* Match text color */
+  color: #110257; /* Match text color */
   font-size: 1em; /* Slightly bigger than text */
   font-weight: bold;
 }
@@ -280,7 +281,7 @@ h1, h2, p {
 .pp {
   font-size: 3rem;
   font-weight: 500;
-  margin: 10px 0;
+  /* margin: 10px 0; */
   color: #6E8E59; /* Darker gray for the "BY" text */
   letter-spacing: 1px;
 }
