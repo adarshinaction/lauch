@@ -215,6 +215,7 @@ h1, h2, p {
 .points-container {
   text-align: center;
   flex-grow: 1; /* Pushes the bottom image down */
+  animation: fadeIn 2.5s ease-in-out;
 }
 
 .points-list {
